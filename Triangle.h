@@ -5,7 +5,7 @@
 namespace YDSR
 {
 
-class Trangle
+class Triangle
 {
 public:
 	Vector4 v[3]; // original coordinates of trangle
@@ -17,7 +17,7 @@ public:
 	Vector3 normal[3]; // normal vector at each vertex
 
 
-	Trangle() {}
+	Triangle() {}
 
 	void setVertex(int idx, Vector4 vec);
 	void setNormal(int idx, Vector3 n);
@@ -26,6 +26,11 @@ public:
 	void setNormals(const std::array<Vector3, 3>& normals);
 	void setColors(const std::array< Vector3, 3>& colors);
 	void setTexCoord(int idx, Vector2 uv);
+
+	Vector3 getColor() const
+	{
+		return color[0];
+	}
 
 	std::array<Vector4, 3> toVector4() const;
 

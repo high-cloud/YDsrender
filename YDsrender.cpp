@@ -54,7 +54,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 
     // init renderder
-    YDSR::initRenderer(600, 800, hWnd);
+    YDSR::initRenderer(1000, 500, hWnd);
 
     // Main message loop:
 

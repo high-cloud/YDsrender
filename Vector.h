@@ -32,7 +32,7 @@ namespace YDSR
 
 	template <> struct  VectorBase<2, Real>
 	{
-		VectorBase() {}
+		VectorBase() :x{}, y{} {}
 		VectorBase(Real _x, Real _y) : x(_x), y(_y) {}
 		Real x, y;
 		Real* ptr() { return &x; }
@@ -59,7 +59,7 @@ namespace YDSR
 
 	template <> struct VectorBase<3, Real>
 	{
-		VectorBase() {}
+		VectorBase() :x{}, y{}, z{} {}
 		VectorBase(Real _x, Real _y, Real _z) : x(_x), y(_y), z(_z) {}
 		Real x, y, z;
 		Real* ptr() { return &x; }
@@ -94,7 +94,7 @@ namespace YDSR
 	};
 	template <> struct  VectorBase<4, Real>
 	{
-		VectorBase() {}
+		VectorBase() :x{}, y{}, z{}, w{} {}
 		VectorBase(Real _x, Real _y, Real _z, Real _w) : x(_x), y(_y), z(_z), w(_w) {}
 		Real x, y, z, w;
 		Real* ptr() { return &x; }
@@ -168,7 +168,7 @@ namespace YDSR
 			return Vector<3, T>(ptr());
 		}
 
-		Vector<3, T> xy() const
+		Vector<2, T> xy() const
 		{
 			static_assert(dims > 2, " dimensions > 2 can narrowing to vector2");
 			return Vector<2, T>(ptr());
@@ -265,7 +265,7 @@ namespace YDSR
 		// vector arithmetic updates
 		Vector& operator*=(Real s)
 		{
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] *= s;
 			}
@@ -276,7 +276,7 @@ namespace YDSR
 		{
 			assert(s != 0.0);
 			Real inv = 1.0f / s;
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] *= inv;
 			}
@@ -286,7 +286,7 @@ namespace YDSR
 		Vector& operator+=(Real s)
 		{
 
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] += s;
 			}
@@ -296,7 +296,7 @@ namespace YDSR
 		Vector& operator-=(Real s)
 		{
 
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] -= s;
 			}
@@ -305,7 +305,7 @@ namespace YDSR
 
 		Vector& operator+=(const Vector& v)
 		{
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] += v[i];
 			}
@@ -314,7 +314,7 @@ namespace YDSR
 
 		Vector& operator-=(const Vector& v)
 		{
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] -= v[i];
 			}
@@ -323,7 +323,7 @@ namespace YDSR
 
 		Vector& operator*=(const Vector& v)
 		{
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] *= v[i];
 			}
@@ -332,7 +332,7 @@ namespace YDSR
 
 		Vector& operator/=(const Vector& v)
 		{
-			for (int i = 0; i < 0; ++i)
+			for (int i = 0; i < dims; ++i)
 			{
 				ptr()[i] /= v[i];
 			}
