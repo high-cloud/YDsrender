@@ -27,9 +27,9 @@ public:
 	void setColors(const std::array< Vector3, 3>& colors);
 	void setTexCoord(int idx, Vector2 uv);
 
-	Vector3 getColor() const
+	Vector3 getColor(Real a,Real b,Real c) const
 	{
-		return color[0];
+		return a*color[0]+b*color[1]+c*color[2];
 	}
 
 	std::array<Vector4, 3> toVector4() const;

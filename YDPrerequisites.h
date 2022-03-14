@@ -1,5 +1,7 @@
 #pragma once
 
+#define NOMINMAX
+
 namespace YDSR
 {
 	typedef float Real;

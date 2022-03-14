@@ -145,9 +145,12 @@
     <ClInclude Include="Math.h" />
     <ClInclude Include="Matrix3.h" />
     <ClInclude Include="Matrix4.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="OBJ_loader.h" />
     <ClInclude Include="render.hpp" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vector.h" />
     <ClInclude Include="YDPrerequisites.h" />
@@ -158,6 +161,8 @@
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Matrix3.cpp" />
     <ClCompile Include="Matrix4.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="YDsrender.cpp" />

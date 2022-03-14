@@ -1,6 +1,6 @@
 #include "Camera.h"
 
-void YDSR::Camera::calMatrix()
+void YDSR::Camera::callMatrix()
 {
 	Matrix4 trans(1, 0, 0, -pos[0],
 		0,1,0,-pos[1],
@@ -15,12 +15,15 @@ void YDSR::Camera::calMatrix()
 		-gazeAt.x, -gazeAt.y, -gazeAt.z, 0,
 		0, 0, 0, 1);
 
+	view =rotation*trans;
+
 	Real nmf_inv = 1.0f / (nearZ - farZ);
 	Real tan_inv = 1.0f / Math::tan(fov * 0.5f);
-	Matrix4 projection(tan_inv, 0, 0, 0,
-		0, tan_inv/aspect, 0, 0,
-		0, 0, 2*(nearZ +farZ)* nmf_inv, -(2*nearZ * farZ +nearZ+farZ)* nmf_inv,
-		0, 0, 0, 1);
 
-	worldToCamera = projection * rotation * trans;
+	projection = { -tan_inv/aspect, 0, 0, 0,
+		0, -tan_inv , 0, 0,
+		0, 0, 2 * (nearZ + farZ) * nmf_inv, -(2*nearZ * farZ + nearZ + farZ) * nmf_inv,
+		0, 0, 1, 0 };
+
+	vp = projection * rotation * trans;
 }

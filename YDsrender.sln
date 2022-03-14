@@ -5,6 +5,11 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YDsrender", "YDsrender.vcxproj", "{89C3C734-83BE-473D-9C82-EF1FF9145754}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1", "..\UnitTest1\UnitTest1.vcxproj", "{0E3AA234-E237-40BE-80B9-F6E204D0624F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{89C3C734-83BE-473D-9C82-EF1FF9145754} = {89C3C734-83BE-473D-9C82-EF1FF9145754}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +26,14 @@ Global
 		{89C3C734-83BE-473D-9C82-EF1FF9145754}.Release|x64.Build.0 = Release|x64
 		{89C3C734-83BE-473D-9C82-EF1FF9145754}.Release|x86.ActiveCfg = Release|Win32
 		{89C3C734-83BE-473D-9C82-EF1FF9145754}.Release|x86.Build.0 = Release|Win32
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Debug|x64.ActiveCfg = Debug|x64
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Debug|x64.Build.0 = Debug|x64
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Debug|x86.ActiveCfg = Debug|Win32
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Debug|x86.Build.0 = Debug|Win32
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Release|x64.ActiveCfg = Release|x64
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Release|x64.Build.0 = Release|x64
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Release|x86.ActiveCfg = Release|Win32
+		{0E3AA234-E237-40BE-80B9-F6E204D0624F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

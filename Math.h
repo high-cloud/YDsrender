@@ -50,7 +50,7 @@ namespace YDSR
 
 		static Real real_max()
 		{
-			return std::numeric_limits<Real>::min();
+			return std::numeric_limits<Real>::max();
 		}
 	};
 
